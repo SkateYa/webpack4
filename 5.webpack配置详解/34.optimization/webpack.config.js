@@ -30,15 +30,15 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all',
-      minSize: 30 * 1024,
-      maxSize: 0,
-      minChunks: 1,
-      maxAsyncRequests: 5,
-      maxInitialRequests: 3,
+      chunks: 'all', // 有效值为 `all`，`async` 和 `initial`
+      minSize: 30 * 1024, // 生成 chunk 的最小体积（≈ 30kb)
+      maxSize: 0, // 确保拆分后剩余的最小 chunk 体积超过限制来避免大小为零的模块
+      minChunks: 1, // 拆分前必须共享模块的最小 chunks 数。
+      maxAsyncRequests: 5, // 最大的按需(异步)加载次数
+      maxInitialRequests: 3, // 打包后的入口文件加载时，还能同时加载js文件的数量（包括入口文件）
       automaticNameDelimiter: '~',
       name: 'true',
-      cacheGroups: {
+      cacheGroups: { // 配置提取模块的方案
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
