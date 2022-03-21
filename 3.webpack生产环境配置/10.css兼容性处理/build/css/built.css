@@ -1,0 +1,17 @@
+#div1{
+    width: 100px;
+    height: 100px;
+    background-color: pink;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: flex;
+    -webkit-backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+#div2{
+    width: 100px;
+    height: 100px;
+    background-color: deeppink;
+}
